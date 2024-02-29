@@ -6,6 +6,8 @@ import { ReactNode } from "react";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material";
 import theme from "@/theme/theme";
+import ClientProviders from "@/providers/client-provders";
+import Providers from "@/providers/providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +22,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <ClerkProvider>
+    <Providers>
       <html lang="en">
         <body className={inter.className}>
           <AppRouterCacheProvider>
@@ -28,6 +30,6 @@ export default function RootLayout({
           </AppRouterCacheProvider>
         </body>
       </html>
-    </ClerkProvider>
+    </Providers>
   );
 }
